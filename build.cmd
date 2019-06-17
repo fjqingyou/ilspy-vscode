@@ -6,6 +6,7 @@ git submodule init
 git submodule update
 
 pushd backend
+dotnet restore
 dotnet msbuild
 popd
 
@@ -25,3 +26,4 @@ call npm test
 
 call npm i vsce -g
 call vsce package -o ilspy-vscode-%build_version%.vsix
+popd
